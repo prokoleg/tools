@@ -41,8 +41,14 @@ $types = array(
 	'bmp' => 'BMP',
 );
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+	<title></title>
 <style>
 img{
 	max-width: 360px;
@@ -59,14 +65,14 @@ body{
 			<table width="500" align="center">
 				<tr>
 					<td align="center">
-						Файл успешно загружен, выберите нижеприведенный вариант для конвертации!
+						Файл успешно загружен, выберите нижеприведенный вариант для конвертации!<br />
 						<img src="uploads/<?=$imageName;?>"  />
 					</td>
 				</tr>
 				<tr>
 					<td align="center">
 						Convert To: 
-							<select name="convert_type">
+							<select class="form-select" aria-label="Default select example" name="convert_type">
 								<?php foreach($types as $key=>$type) {?>
 									<?php if($key != $imageType){?>
 									<option value="<?=$key;?>"><?=$type;?></option>
@@ -78,7 +84,7 @@ body{
 				</tr>
 				<tr>
 				<tr>
-					<td align="center"><input type="submit" value="Конвертировать" /></td>
+					<td align="center"><button class="btn btn-secondary">Конвертировать</button></td>
 				</tr>
 			</table>
 		</form>

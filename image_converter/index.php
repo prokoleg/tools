@@ -19,15 +19,27 @@ if($_FILES){
 	}
 }	
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+	<title></title>
 <style>
 	body{
-		background: lightgray;
+		/*background: lightgray;*/
+		background-image: url('screen.webp');
+		opacity: 0.9;
 	}
 	table{
-		margin-top: 200px;
+		margin-top: 100px;
 		background: white;
+		border-radius: 10px;
+	}
+	td {
+		padding: 15px;
 	}
 </style>
 <script>
@@ -44,12 +56,14 @@ if($_FILES){
 <body>
 	<table width="500" align="center">
 		<tr><td align="center">	<h2 align="center">Загрузите и конвертируйте изображения вместе с Blanet.Ru</h2></td></tr>
-		<tr><td align="center"><h4>Конвертируем только форматы JPG, PNG, GIF, WEBP, BMP</h4></td></th>
+		<tr><td align="center"><code>Поддерживаемые форматы JPG, PNG, GIF, WEBP, BMP</code></td></th>
 		<tr>
 			<td align="center">
 				<form action="" enctype="multipart/form-data" method="post" onsubmit="return checkEmpty()" />
-					<input type="file" name="fileToUpload" id="fileToUpload" />
-					<input type="submit" value="Загрузить" />
+				<div class="mb-3">
+  <input class="form-control" type="file" name="fileToUpload" id="fileToUpload" />
+</div>
+					<input type="submit" value="Загрузить" class="btn btn-secondary" />
 				</form>
 			</td>
 		</tr>
