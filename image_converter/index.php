@@ -1,6 +1,18 @@
 <?php
+// Очищаем от старых файлов
+  $path = dirname(__FILE__).'/uploads';
+  if ($handle = opendir($path)) {
 
-//import the converter class
+    while (false !== ($file = readdir($handle))) {
+        if ((time()-filectime($path.'/'.$file)) < 86400) {  // 86400 = 60*60*24 Удаление через сутки
+          if (strripos($file, '.(.*)') !== false) {
+            unlink($path.'/'.$file);
+          }
+        }
+    }
+  }
+
+// Импортируем класс конвектора
 require('image_converter.php');
 
 if($_FILES){

@@ -1,24 +1,5 @@
 <?php 
 
-/***
-*	Image converter Script by Agurchand 
-*	Find the script at Theonlytutorials.com	
-*
-* 	convert_image() has 3 mandatory parameters
-*	$convert_type 	=> accepts string either 'png', 'jpg' or 'gif'
-*   $target_dir  	=> it is the source as well as the target directory
-*	$image_name		=> give the actual image name such as 'image1.jpg'
-*
-*	//optional parameter
-*	$image_quality 	=> can be adjusted, if you don't want 100% quality
-*
-*	upload_image() is the upload image handler, if you don't have a upload script, you can use this!
-*	
-*	you can edit this script as per your requirement
-* 	if you are going to re-produce the script, please mention original script from 'theonlytutorials.com'
-***/
-
-
 class Image_converter{
 	
 	//конвертер изображений
@@ -50,7 +31,7 @@ class Image_converter{
 		//to gif
 		if($convert_type == 'gif'){
 			$binary = imagecreatefromstring(file_get_contents($image));
-			imageGif($binary, $target_dir.$img_name.'.'.$convert_type, $image_quality);
+			imageGif($binary, $target_dir.$img_name.'.'.$convert_type);
 			return $img_name.'.'.$convert_type;
 		}
 		//to webp
