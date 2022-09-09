@@ -74,9 +74,9 @@ class Image_converter{
 		}
 		
 		// Проверяем размер файла - если он превышает 1 МБ, отклоняем 
-		$file_size = $this->check_file_size($files[$input_name]["size"], 10000000);
+		$file_size = $this->check_file_size($files[$input_name]["size"], 5242880);
 		if(!$file_size){
-			echo "Вы не можете загружать файлы размером более 10 МБ";
+			echo "Вы не можете загружать файлы размером более 5 МБ";
 			return false;
 		}
 

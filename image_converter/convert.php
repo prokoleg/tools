@@ -55,6 +55,7 @@ img{
 }
 body{
 	background: lightgray;
+	opacity: 0.9;
 }
  
 </style>
