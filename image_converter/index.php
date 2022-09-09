@@ -29,9 +29,9 @@ if($_FILES){
 	<title></title>
 <style>
 	body{
+		background: lightgray;
 		background-image: url('screen.webp');
 		opacity: 0.9;
-		background: lightgray;
 	}
 	table{
 		margin-top: 100px;
