@@ -74,14 +74,14 @@ class Image_converter{
 		}
 		
 		// Проверяем размер файла - если он превышает 1 МБ, отклоняем 
-		$file_size = $this->check_file_size($files[$input_name]["size"], 1000000);
+		$file_size = $this->check_file_size($files[$input_name]["size"], 10000000);
 		if(!$file_size){
-			echo "Вы не можете загружать файлы размером более 1 МБ";
+			echo "Вы не можете загружать файлы размером более 10 МБ";
 			return false;
 		}
 
-		// Разрешаем определенные форматы файлов
-		$file_type = $this->check_only_allowed_image_types($imageFileType);
+		// Разрешаем определенные форматы файлов, а ткуже приводим расширение файла к прописному формату
+		$file_type = $this->check_only_allowed_image_types(mb_strtolower($imageFileType));
 		if(!$file_type){
 			echo "Вы не можете загружать файлы, кроме JPG, JPEG, GIF, BMP, WEBP и PNG";
 			return false;

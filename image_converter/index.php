@@ -1,4 +1,5 @@
 <?php
+
 // Очищаем от старых файлов
   $path = dirname(__FILE__).'/uploads';
   if ($handle = opendir($path)) {
@@ -18,7 +19,7 @@ require('image_converter.php');
 if($_FILES){
 	$obj = new Image_converter();
 	
-	//call upload function and send the $_FILES, target folder and input name
+	//вызоваем функцию загрузки и отправки $_FILES, целевую папку и имя ввода
 	$upload = $obj->upload_image($_FILES, 'uploads', 'fileToUpload');
 	if($upload){
 		$imageName = urlencode($upload[0]);
