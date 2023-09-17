@@ -74,7 +74,7 @@ if (!$_GET) {
 <code>ВНИМАНИЕ! Все поля, кроме адреса сайта и почты обязательны к заполнению</code>
 </form>
 <?php
-} elseif ($_GET['firstname'] == null || $_GET['lastname'] == null || $_GET['email'] == null) {
+} elseif ($_GET['firstname'] == null || $_GET['lastname'] == null) {
 	echo '<code>ВНИМАНИЕ! Все поля, кроме адреса сайта и почты обязательны к заполнению</code><br /><a href="'.HOME.'">Повторить</a>';
 } else {
 ?>
