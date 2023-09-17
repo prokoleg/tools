@@ -42,7 +42,7 @@ $img = '<img src="' . $photo . '">';
 $img_1 = '<img src="' . $photo1 . '">';
 
 
-if (!isset($url_home)) {
+if ($_GET['url'] == null) {
 	$url_home = 'https://blanet.ru';
 } else {
 	$url_home = 'https://' . $_GET['url'];
