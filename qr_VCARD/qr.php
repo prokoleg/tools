@@ -42,16 +42,16 @@ $img = '<img src="' . $photo . '">';
 $img_1 = '<img src="' . $photo1 . '">';
 
 
-if (!isset($url)) {
-	$url = 'https://blanet.ru';
+if (!isset($url_home)) {
+	$url_home = 'https://blanet.ru';
 } else {
-	$url = 'https://' . $_GET['url'];
+	$url_home = 'https://' . $_GET['url'];
 }
 
 $text  = 'BEGIN:VCARD' . "\n";
 $text .= 'N: ' . $firstname . ';' .$lastname. "\n";
 $text .= 'TEL;WORK;VOICE;CELL: +' . $phone . "\n";
-$text .= 'URL: ' . $url . "\n";
+$text .= 'URL: ' . $url_home . "\n";
 $text .= 'EMAIL;TYPE=INTERNET: ' . $email . "\n";
 $text .= 'PHOTO;URI:' . $photo . "\n";
 $text .= 'LOGO;VALUE=uri:' . $photo . "\n";
